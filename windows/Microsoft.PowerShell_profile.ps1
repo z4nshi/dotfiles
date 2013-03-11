@@ -154,7 +154,7 @@ Function Get-VMWAREToolsStatus
    }
 }
 
-function Connect-ESX523
+function Connect-ESX
 {
 	Connect-VIServer -Server 10.192.16.28 -User username -Password "password" -Protocol https
 }
