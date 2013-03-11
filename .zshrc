@@ -123,11 +123,13 @@ zstyle ':completion:*' insert-unambiguous true
 zstyle ':completion:*' original true
 zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*:rm:*' ignore-line yes
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:*:kill:*:processes' command 'ps haxopid:5,user:4,%cpu:4,ni:2,stat:3,etime:8,args'
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:kill:*' force-list always
 
+zstyle ':completion:*:processes' command 'ps -ax'
+zstyle ':completion:*:processes-names' command 'ps -aeo comm='
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:*:killall:*:processes-names' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:*:killall:*' menu yes select
 # }}}
 
 # {{{ Per OS settings
