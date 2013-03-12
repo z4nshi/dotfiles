@@ -1,5 +1,5 @@
 # Import Modules
-# import-module activedirectory
+# Import-Module activedirectory
 
 function Get-Uptime {
     Param([Parameter(Mandatory = $True,
