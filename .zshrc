@@ -317,7 +317,7 @@ function google; {
 
 #{{{ zalias
 
-if [ -f ~/.zalias ]]; then
+if [[ -f ~/.zalias ]]; then
   source ~/.zalias
 fi
 
