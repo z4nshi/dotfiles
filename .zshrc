@@ -3,8 +3,8 @@
 # {{{ Keychain
 if which keychain &> /dev/null
 then
-      	keychain id_rsa
-        . ~/.keychain/${HOST}-sh
+   keychain id_rsa
+   . ~/.keychain/${HOST}-sh
 fi
 # }}}
 
@@ -16,7 +16,6 @@ HISTSIZE=5000
 SAVEHIST=5000
 setopt append_history hist_ignore_all_dups hist_reduce_blanks
 
-source ~/.zalias
 
 # Misc options
 setopt auto_list
@@ -316,7 +315,15 @@ function google; {
 
 # }}}
 
-# {{{ Reminder
+#{{{ zalias
+
+if [ -f ~/.zalias ]]; then
+  source ~/.zalias
+fi
+
+#}}}
+
+# {{{ zshrc.local
 
 if [[ -f ~/.zshrc.local ]]; then
   source ~/.zshrc.local
@@ -324,7 +331,7 @@ fi
 
 # }}}
 
-# {{{ Reminder
+# {{{ reminder
 
 if [[ -f ~/.reminder ]]; then
   cat ~/.reminder
