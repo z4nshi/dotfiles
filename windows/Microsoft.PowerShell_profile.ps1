@@ -19,6 +19,21 @@ $help="#Activer le profile :
 new-item -path $profile -itemtype file -force
 notepad $profile
 
+function pwgen {
+param(
+    $length = 8,
+    $characters = 'abcdefghkmnprstuvwxyzABCDEFGHKLMNPRSTUVWXYZ',
+    $nonchar = '23456789!"§$%&/()=?*+#_'
+)
+$length = $length - 2
+$random = 1..$length | ForEach-Object { Get-Random -Maximum $characters.length }
+$random2 = 1..2 | ForEach-Object { Get-Random -Maximum $nonchar.length }
+
+$private:ofs= ""
+$password = [String]$characters[$random] + [String]$nonchar[$random2]
+return $password
+}
+
 # Report USB Device installed :
 gwmi Win32_USBControllerDevice -computername SERVER1 |fl Antecedent,Dependent
 
