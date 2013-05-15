@@ -247,6 +247,26 @@ function Connect-ESX
 	Connect-VIServer -Server 10.192.16.28 -User username -Password "password" -Protocol https
 }
 
+function Add-NFS-DataStore01([string]$NFSName)
+{
+	New-DataStore -VMHost $NFSName -Name "NFS-DataStore01" -Nfs -NfsHost mon-ip -Path /mnt/zPool/NFS-DataStore01
+}
+
+function Activate_Syslog
+{
+	Set-VMHostSysLogServer -SysLogServer 'mon-ip' -SysLogServerPort '514'
+	Get-VMHostFirewallException -Name "syslog"  | set-VMHostFirewallException -Enabled:$true
+
+	$esxcli = Get-EsxCli -VMHost $myHost
+	$esxcli.system.syslog.reload()
+}
+
+function Activate_Snmp
+{
+	$hostSNMP = Get-VMHostSNMP
+	$hostSNMP = Set-VMHostSNMP $hostSNMP -Enabled:$true -ReadOnlyCommunity 'esx_snmp'
+}
+
 # Ajout de quelques alias utiles
 New-Item alias:np -value C:\windows\system32\notepad.exe
 New-Item alias:ff -Value "c:\program files (x86)\Mozilla Firefox\firefox.exe"
