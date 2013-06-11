@@ -1,0 +1,38 @@
+# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
+
+###########################
+#### DEPOTS PRINCIPAUX ####
+###########################
+deb http://fr.archive.ubuntu.com/ubuntu/ raring main restricted
+deb-src http://fr.archive.ubuntu.com/ubuntu/ raring main restricted
+deb http://fr.archive.ubuntu.com/ubuntu/ raring-updates main restricted
+deb-src http://fr.archive.ubuntu.com/ubuntu/ raring-updates main restricted
+
+#########################
+#### DEPOTS UNIVERSE ####
+#########################
+deb http://fr.archive.ubuntu.com/ubuntu/ raring universe
+deb-src http://fr.archive.ubuntu.com/ubuntu/ raring universe
+deb http://fr.archive.ubuntu.com/ubuntu/ raring-updates universe
+deb-src http://fr.archive.ubuntu.com/ubuntu/ raring-updates universe
+
+###########################
+#### DEPOTS MULTIVERSE ####
+###########################
+deb http://fr.archive.ubuntu.com/ubuntu/ raring multiverse
+deb-src http://fr.archive.ubuntu.com/ubuntu/ raring multiverse
+deb http://fr.archive.ubuntu.com/ubuntu/ raring-updates multiverse
+deb-src http://fr.archive.ubuntu.com/ubuntu/ raring-updates multiverse
+
+#########################
+#### DEPOTS SECURITY ####
+#########################
+deb http://security.ubuntu.com/ubuntu raring-security main restricted
+deb-src http://security.ubuntu.com/ubuntu raring-security main restricted
+
+########################
+#### DEPOTS PARTNER ####
+########################
+deb http://archive.canonical.com/ubuntu raring partner
+deb-src http://archive.canonical.com/ubuntu raring partner
+
